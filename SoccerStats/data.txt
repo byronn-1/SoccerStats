@@ -1,1 +1,35 @@
 ﻿Hello World
+char capitalH = 'H';
+> capitalH
+'H'
+> char lowerH = '\u0068';
+> lowerH
+'h'
+> byte[] unicodeBytes = UnicodeEncoding.Unicode.GetBytes(new char[] { lowerH });
+> unicodeBytes
+byte[2] { 104, 0 }
+> string unicodeString = UnicodeEncoding.Unicode.GetString(unicodeBytes);
+> unicodeString
+"h"
+> sbyte signedByte = -128;
+> sybte signedByte = 200;
+(1,1): error CS0246: The type or namespace name 'sybte' could not be found (are you missing a using directive or an assembly reference?)
+> char degree = '\u00B0';
+> degree
+'°'
+> Console.WriteLine("The current temperature is 74.8" + degree + "F");
+The current temperature is 74.8°F
+ byte[] mysterMessage = {89, 0, 97, 0, 121, 0, 33, 0};
+ var mysteryMessage = new byte[] { 89, 0, 97, 0, 121, 0, 33, 0 };
+ set up a self closing file reader....
+             string currentDirectory = Directory.GetCurrentDirectory();
+            DirectoryInfo directory = new DirectoryInfo(currentDirectory);
+            var fileName = Path.Combine(directory.FullName, "data.txt");
+            var file = new FileInfo(fileName);
+            if(file.Exists)
+            {
+                using(var reader = new StreamReader(file.FullName))
+                {
+                        Console.SetIn(reader);
+                        Console.WriteLine(Console.ReadLine());
+                }
